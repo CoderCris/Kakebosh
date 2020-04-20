@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kikon-agenda": {
+      "hosting": {
+        "Kakebosh": [
+          "kikon-agenda"
+        ]
+      }
+    }
+  }
+}
