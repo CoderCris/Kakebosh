@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "Kakebosh",
-      "public": "dist/Kakebosh",
+      "target": "Kakeboss",
+      "public": "dist/Kakeboss",
       "ignore": [
         "firebase.json",
         "**/.*",
