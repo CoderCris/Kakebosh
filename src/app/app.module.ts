@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { environment } from './../environments/environment';
+
 
 //Firebase Modules
 import { AngularFireModule } from '@angular/fire';
-/*
 import { AngularFireDatabaseModule } from '@angular/fire';
+import { environment } from './../environments/environment';
+/*
 // Questionable Modules:
 import { AngularFireAuthModule } from '@angular/fire';
 import { AngularFireStoreModule } from '@angular/fire';
@@ -21,8 +22,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)/*,
-    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule/*,
     AngularFireAuthModule,
     AngularFireStoreModule,*/
   ],
