@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-interface Food {
+interface User {
   value: string;
   viewValue: string;
 }
@@ -13,11 +13,11 @@ interface Food {
 export class UserDataComponent implements OnInit {
 
   favoriteSeason: string;
-  seasons: string[] = ['Alumno', 'Profesor', 'Administrador'];
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+  roles: string[] = ['Alumno', 'Profesor', 'Administrador'];
+  categories: User[] = [
+    {value: 'cat-0', viewValue: '0'},
+    {value: 'cat-1', viewValue: '1'},
+    {value: 'cat-2', viewValue: '2'}
   ];
 
   constructor() { }
