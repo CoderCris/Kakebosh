@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+
 
 export interface UserData {
   id: string;
@@ -33,7 +35,7 @@ export class UsersListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
     // Assign the data to the data source for the table to render
@@ -52,9 +54,6 @@ export class UsersListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
-  }
-  openDialog(course, type){
-      
   }
 
 }

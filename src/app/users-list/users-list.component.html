@@ -34,12 +34,12 @@
   
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-        <button mat-cell mat-mini-fab color="primary" *matCellDef="let course" (click)="openDialog(course, 'delete')" ><mat-icon>delete</mat-icon></button>
+        <button mat-cell mat-mini-fab color="primary" *matCellDef="let course" (click)="deleteUser()" ><mat-icon>delete</mat-icon></button>
       </ng-container>
 
       <ng-container matColumnDef="modified">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-        <button  mat-cell mat-mini-fab color="accent" *matCellDef="let course" (click)="openDialog(course, 'delete')" ><mat-icon>edit</mat-icon></button>
+        <button  mat-cell mat-mini-fab color="accent" *matCellDef="let course" (click)="editUser()" ><mat-icon>edit</mat-icon></button>
       </ng-container>
 
       <tr class="header-row" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
