@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 //Firebase Modules
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from 'firebase';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from './../environments/environment';
 /*
 // Questionable Modules:
@@ -20,7 +20,7 @@ import { UserComponent } from './component/users/user/user.component';
 import { UsersComponent } from './component/users/users.component';
 import { ListUsersComponent } from './component/users/list-users/list-users.component';
 
-// services (para acceder a los métodos de manejo de usuarios)
+// services (para acceder a los mÃ©todos de manejo de usuarios)
 import { UserService } from './services/user.service';
 
 
