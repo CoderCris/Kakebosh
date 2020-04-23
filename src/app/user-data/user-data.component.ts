@@ -12,7 +12,7 @@ interface User {
 })
 export class UserDataComponent implements OnInit {
 
-  favoriteSeason: string;
+  chosenRole: string;
   roles: string[] = ['Alumno', 'Profesor', 'Administrador'];
   categories: User[] = [
     {value: 'cat-0', viewValue: '0'},

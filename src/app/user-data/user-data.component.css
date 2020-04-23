@@ -31,3 +31,10 @@
   #image-perfil{
     width:200px;
   }
+
+  .data{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
