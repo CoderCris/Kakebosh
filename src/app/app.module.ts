@@ -19,6 +19,7 @@ import {UsersListComponent} from './users-list/users-list.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatPaginatorModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
