@@ -15,12 +15,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import {UsersListComponent} from './users-list/users-list.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDataComponent
+    UserDataComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSelectModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule,
+    MatListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
