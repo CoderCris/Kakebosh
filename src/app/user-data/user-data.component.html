@@ -1,7 +1,6 @@
 <div id="container">
 <mat-card class="example-card">
-<!--Ver como podemos incluir una imagen-->
-
+<div class="container-info">
 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" id="image-perfil" alt="Photo of a Shiba Inu">
 <div class="data">
   <div class="fullname">
@@ -18,6 +17,7 @@
     </form>
   </div>
 
+  <div class="typedata">
   <div class="roles">
     <label id="example-radio-group-label">Role:</label>
     <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="chosenRole">
@@ -25,6 +25,7 @@
         {{role}}
       </mat-radio-button>
     </mat-radio-group>
+  </div>
   </div>
 
   <div class="category">
@@ -56,6 +57,7 @@
     </mat-card-actions>
   </div>
 
+</div>
 </div>
 </mat-card>
 
