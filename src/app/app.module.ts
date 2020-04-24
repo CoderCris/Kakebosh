@@ -2,6 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
+
+
+//Firebase Modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from 'firebase';
+import { environment } from './../environments/environment';
+/*
+// Questionable Modules:
+import { AngularFireAuthModule } from '@angular/fire';
+import { AngularFireStoreModule } from '@angular/fire';
+*/
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserDataComponent } from './user-data/user-data.component';
@@ -27,11 +38,24 @@ import {MatIconModule} from '@angular/material/icon';
 import {firebaseConfig} from './firebase';
 
 
+//Componentes para user
+import { UserComponent } from './component/users/user/user.component';
+import { UsersComponent } from './component/users/users.component';
+import { ListUsersComponent } from './component/users/list-users/list-users.component';
+
+// services (para acceder a los métodos de manejo de usuarios)
+import { UserService } from './services/user.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     UserDataComponent,
-    UsersListComponent
+    UsersListComponent,
+    UserComponent,
+    UsersComponent,
+    ListUsersComponent
+
   ],
   imports: [
     BrowserModule,
@@ -50,9 +74,15 @@ import {firebaseConfig} from './firebase';
     MatTableModule,
     MatIconModule,
     AngularFireModule.initializeApp(firebaseConfig, 'mda1-a6964'),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule/*,
+    AngularFireAuthModule,
+    AngularFireStoreModule,*/
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
