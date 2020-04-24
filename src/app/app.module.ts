@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 //Firebase Modules
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from 'firebase';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from './../environments/environment';
 /*
 // Questionable Modules:
