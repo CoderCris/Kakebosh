@@ -2,25 +2,18 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 
-export interface UserData {
+export interface User {
+  additional_data: string;
+  category: string;
   id: string;
+  lastname: string;
   name: string;
-  progress: string;
-  color: string;
+  rol: string;
 }
-
-/** Constants used to fill up our data base. */
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
 
 @Component({
   selector: 'app-users-list',
@@ -29,17 +22,25 @@ const NAMES: string[] = [
 })
 export class UsersListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color', 'delete','modified'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['name','lastname','category','rol'];
+  dataSource: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private dialog: MatDialog) {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+  public users: Observable<any[]>;
+  public usuarios: Array<User> = [];
+
+  constructor(db: AngularFireDatabase) {
+    this.users = db.list('/users').valueChanges()
+    console.log(this.users
+      .subscribe(users => {
+      users.forEach(user => {
+        console.log(user);
+        this.usuarios.push(user);
+      })
+      this.dataSource = new MatTableDataSource(this.usuarios);
+    }))
    }
 
   ngOnInit(): void {
@@ -56,17 +57,4 @@ export class UsersListComponent implements OnInit {
     }
   }
 
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
 }

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 //importado
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,6 +24,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {firebaseConfig} from './firebase';
 
 
 @NgModule({
@@ -43,7 +48,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatPaginatorModule,
     MatListModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireModule.initializeApp(firebaseConfig, 'mda1-a6964'),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
