@@ -1,0 +1,35 @@
+#container{
+  padding: 8px 32px;
+}
+
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+
+  .header-row{
+    width: 100%;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22% 6% 6%;
+    grid-template-rows: 100%;
+    text-align: center;
+  }
+
+  .row{
+    width: 100%;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22% 6% 6%;
+    grid-template-rows: 100%;
+    text-align: center;
+  }
+  
+  .icon{
+    cursor: pointer;
+  }
