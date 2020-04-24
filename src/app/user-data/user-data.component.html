@@ -5,14 +5,14 @@
 <div class="data">
   <div class="fullname">
     <form class="example-form">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput>
+        <input matInput required>
       </mat-form-field>
   
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Surname</mat-label>
-        <input matInput>
+        <input matInput required>
       </mat-form-field>
     </form>
   </div>
@@ -20,7 +20,7 @@
   <div class="typedata">
   <div class="roles">
     <label id="example-radio-group-label">Role:</label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="chosenRole">
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="chosenRole" required>
       <mat-radio-button class="example-radio-button" *ngFor="let role of roles" [value]="role">
         {{role}}
       </mat-radio-button>
@@ -29,10 +29,10 @@
   </div>
 
   <div class="category">
-    <h4>Categoria</h4>
+    <h4>Categoria *</h4>
     <mat-form-field>
-      <mat-label>Categoria</mat-label>
-      <mat-select>
+      <mat-label >Categoria</mat-label>
+      <mat-select required>
         <mat-option *ngFor="let category of categories" [value]="category.value">
           {{category.viewValue}}
         </mat-option>
