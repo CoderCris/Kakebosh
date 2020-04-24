@@ -12,8 +12,7 @@ export class AppComponent {
   constructor(private route: Router){
 
   }
-
-
+  
   addUser(){
     console.log("Entro")
     this.route.navigate(['user-data']);
