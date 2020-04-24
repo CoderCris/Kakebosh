@@ -29,5 +29,28 @@
   }
 
   #image-perfil{
-    width:200px;
+    max-width:200px;
+    height: 100%;
+    margin: 10px;
+    margin-right: 25px;
+  }
+
+  .container-info{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .data{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .typedata{
+    display: flex;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
   }
