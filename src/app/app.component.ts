@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
+
+import {UsersComponent} from './component/users/users.component';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Kakebosh';
+  showList = true;
 
-  constructor(private route: Router){
+  constructor() {
 
   }
-  
-  addUser(){
-    console.log("Entro")
-    this.route.navigate(['user-data']);
+
+  switchButton() {
+    this.showList = !this.showList;
   }
 }

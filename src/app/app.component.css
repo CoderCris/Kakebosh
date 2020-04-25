@@ -1,9 +1,9 @@
 #mat-toolbar{
-    display: grid;
-    grid-template-columns: 90% 10%;
+  display: grid;
+  grid-template-columns: 90% 10%;
 }
 
-#addUser{
-    cursor: pointer;
-    text-align: center;
+.switchButton{
+  cursor: pointer;
+  text-align: center;
 }

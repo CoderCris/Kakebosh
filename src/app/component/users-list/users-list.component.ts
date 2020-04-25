@@ -22,7 +22,7 @@ export interface User {
 })
 export class UsersListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name','lastname','category','rol'];
+  displayedColumns: string[] = ['name','surname','category','rol', 'delete', 'modified'];
   dataSource: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -33,14 +33,13 @@ export class UsersListComponent implements OnInit {
 
   constructor(db: AngularFireDatabase) {
     this.users = db.list('/users').valueChanges()
-    console.log(this.users
+   this.users
       .subscribe(users => {
       users.forEach(user => {
-        console.log(user);
         this.usuarios.push(user);
       })
       this.dataSource = new MatTableDataSource(this.usuarios);
-    }))
+    });
    }
 
   ngOnInit(): void {
