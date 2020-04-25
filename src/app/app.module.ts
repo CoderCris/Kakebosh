@@ -5,9 +5,9 @@ import {FormsModule} from '@angular/forms';
 
 
 //Firebase Modules
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from './../environments/environment';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
+//import { environment } from './../environments/environment';
 /*
 // Questionable Modules:
 import { AngularFireAuthModule } from '@angular/fire';
@@ -15,7 +15,7 @@ import { AngularFireStoreModule } from '@angular/fire';
 */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserDataComponent } from './user-data/user-data.component';
+import { UserDataComponent } from './component/users/user-data/user-data.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from 'angularfire2';
@@ -30,7 +30,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
-import {UsersListComponent} from './users-list/users-list.component';
+import {UsersListComponent} from './component/users/users-list/users-list.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
@@ -39,9 +39,9 @@ import {firebaseConfig} from './firebase';
 
 
 //Componentes para user
-import { UserComponent } from './component/users/user/user.component';
+//import { UserComponent } from './component/users/user/user.component';
 import { UsersComponent } from './component/users/users.component';
-import { ListUsersComponent } from './component/users/list-users/list-users.component';
+//import { ListUsersComponent } from './component/users/list-users/list-users.component';
 
 // services (para acceder a los métodos de manejo de usuarios)
 import { UserService } from './services/user.service';
@@ -52,9 +52,9 @@ import { UserService } from './services/user.service';
     AppComponent,
     UserDataComponent,
     UsersListComponent,
-    UserComponent,
+    //UserComponent,
     UsersComponent,
-    ListUsersComponent
+    //ListUsersComponent
 
   ],
   imports: [
@@ -75,7 +75,7 @@ import { UserService } from './services/user.service';
     MatIconModule,
     AngularFireModule.initializeApp(firebaseConfig, 'mda1-a6964'),
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule/*,
     AngularFireAuthModule,
     AngularFireStoreModule,*/
