@@ -1,7 +1,2 @@
-<mat-toolbar id="mat-toolbar" color="primary">
-  <span id="title">Kakeboss</span>
-  <button *ngIf="showList" mat-button  class="switchButton" (click)="switchButton()">Añadir usuario</button>
-  <button *ngIf="!showList" mat-button  class="switchButton" (click)="switchButton()">Ver lista de usuarios</button>
-</mat-toolbar>
 <app-users-list *ngIf="showList" ></app-users-list>
 <app-user-data *ngIf="!showList"></app-user-data>

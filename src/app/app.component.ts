@@ -10,9 +10,13 @@ import {UsersComponent} from './component/users/users.component';
 })
 export class AppComponent {
   title = 'Kakebosh';
+  showList = true;
 
-  constructor(private usersComponent: UsersComponent) {
+  constructor() {
 
   }
 
+  switchButton() {
+    this.showList = !this.showList;
+  }
 }
