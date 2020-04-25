@@ -3,10 +3,10 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 
-//Firebase Modules
+// Firebase Modules
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
-//import { environment } from './../environments/environment';
+// import { environment } from './../environments/environment';
 /*
 // Questionable Modules:
 import { AngularFireAuthModule } from '@angular/fire';
@@ -21,7 +21,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 
-//importado
+// importado
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -37,13 +37,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {firebaseConfig} from './firebase';
 
 
-//Componentes para user
-//import { UserComponent } from './component/users/user/user.component';
+// Componentes para user
+// import { UserComponent } from './component/users/user/user.component';
 import {UsersComponent} from './component/users/users.component';
-//import { ListUsersComponent } from './component/users/list-users/list-users.component';
+// import { ListUsersComponent } from './component/users/list-users/list-users.component';
 
 // services (para acceder a los métodos de manejo de usuarios)
 import {UserService} from './services/user.service';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 
 @NgModule({
@@ -51,9 +52,9 @@ import {UserService} from './services/user.service';
     AppComponent,
     UserDataComponent,
     UsersListComponent,
-    //UserComponent,
+    // UserComponent,
     UsersComponent,
-    //ListUsersComponent
+    // ListUsersComponent
 
   ],
   imports: [
@@ -74,14 +75,15 @@ import {UserService} from './services/user.service';
     MatIconModule,
     AngularFireModule.initializeApp(firebaseConfig, 'mda1-a6964'),
     AngularFireDatabaseModule,
-    //AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule/*,
+    //AngularFireModule.initializeApp(environment.firebase)
+    /*
     AngularFireAuthModule,
     AngularFireStoreModule,*/
   ],
   providers: [
     UserService,
-    UsersComponent
+    UsersComponent,
+    AngularFireDatabase
   ],
   bootstrap: [AppComponent]
 })

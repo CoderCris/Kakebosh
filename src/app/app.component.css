@@ -1,0 +1,9 @@
+#mat-toolbar{
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+
+.switchButton{
+  cursor: pointer;
+  text-align: center;
+}
