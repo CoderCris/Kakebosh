@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-users',
@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  showList = true;
 
-  constructor() { }
+  constructor() {
+  }
+
+  switchButton() {
+    this.showList = !this.showList;
+  }
 
   ngOnInit(): void {
   }

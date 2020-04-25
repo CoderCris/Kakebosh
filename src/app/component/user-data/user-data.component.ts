@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
 interface User {
@@ -21,7 +21,8 @@ export class UserDataComponent implements OnInit {
     {value: 'cat-2', viewValue: '2'}
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
